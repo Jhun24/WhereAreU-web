@@ -1,0 +1,196 @@
+html, body {
+  font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background: #d9d9d9;
+}
+
+.chat-bar {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  font-size: 0;
+  text-align: right;
+  z-index: 9999;
+}
+
+.conversation {
+    display: inline-block;
+    width: 33%;
+    color: #FFF;
+    font-size: 11px;
+    font-size: 1.1rem;
+    text-align: left;
+    line-height: 30px;
+    line-height: 3rem;
+    margin: 0 0.5rem;
+    overflow: hidden;
+    font-family: sans-serif;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px 5px 0 0;
+    min-width: 250px;
+    max-height: 30px;
+    transition: max-height 0.7s linear;
+    position: relative;
+
+    &.open {
+        max-height: 1000px;
+    }
+
+    .chat-controls {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        z-index: 1;
+
+        a {
+            text-decoration: none;
+            outline: 0;
+            transition: all 0.2s ease-in-out;
+            color: rgba(255,255,255, 0.27);
+            display: inline-block;
+
+            &:hover, &:active, &:focus {
+                color: #FFF;
+                -ms-transform: scale(1.05);
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .chat-heading {
+        padding: 0 0.3rem;
+        background-color: #386B96;
+        position: relative;
+        cursor: pointer;
+
+        span.name {
+            pointer-events: none;
+        }
+    }
+
+    .input-bar {
+        height: 100%;
+        background-color: #fff;
+        overflow-y: auto;
+        border-top: 1px solid #999;
+        position: relative;
+        textarea {
+            border: 0;
+            outline: 0;
+            box-shadow: 0;
+            resize: none;
+            overflow: hidden;
+            display: block;
+            min-height: 18px;
+        }
+
+        a.media-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: rgba(0,0,0,0.27);
+            line-height: initial;
+            outline: 0;
+            text-decoration: none;
+            &:hover, &:focus, &:active {
+                color: rgba(0,0,0,0.5);
+            }
+        }
+
+    }
+
+    .chat-body {
+        background-color: #e1e1e1;
+        color: rgba(0,0,0,0.87);
+        padding: 0.5em 0.5em 0;
+        font-size: 12px;
+        line-height: 12px;
+        height: auto;
+        max-height: 269px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .message-date {
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+            margin: 5px 0;
+            display: block;
+        }
+
+        .message {
+            display: block;
+            line-height: initial;
+            padding-right: 0.3rem;
+            margin-bottom: 0.8rem;
+
+            .message-sender {
+                display: inline-block;
+                width: 20%;
+                height: 20%;
+                max-width: 50px;
+                max-height: 50px;
+                vertical-align: bottom;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .message-body {
+                width: 60%;
+                display: inline-block;
+                background-color: #FFF;
+                padding: 0.8em;
+                text-align: left;
+                position: relative;
+                margin-left: 15px;
+                direction: ltr;
+                vertical-align: bottom;
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    border-color: transparent transparent #FFF transparent;
+                    border-style: solid;
+                    border-width: 15px;
+                    left: -15px;
+                    bottom: 0;
+                }
+            }
+
+            &.reply {
+                padding-right: 0;
+                padding-left: 0.3rem;
+                text-align: right;
+                direction: rtl;
+
+                .message-body {
+                    margin-left: 0;
+                    margin-right: 15px;
+
+                    &:before {
+                        left: initial;
+                        right: -15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .conversation {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .conversation {
+        width: 18%;
+    }
+}
