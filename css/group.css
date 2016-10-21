@@ -3,6 +3,10 @@ body {
 		overflow:hidden;
 }
 
+#logout{
+	height:2000%;
+}
+
 #columns{
     column-width:300px;
     column-gap: 15px;
@@ -15,7 +19,7 @@ body {
     margin-bottom: 10%;
     padding:10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    background-color: #ffffff; 
+    background-color: #ffffff;
 
   }
   #columns figure img{
@@ -47,7 +51,7 @@ body {
 
 body {
 		font-family: 'Roboto', Arial, sans-serif;
-	
+
 		background-color: #ebebeb;
 		overflow-x: hidden;
 		text-align: center;
@@ -115,24 +119,15 @@ header > nav > div:hover > div {
 		display: block;
 }
 
-header > nav > div > div > a {
-		display: block;
-	
-		padding: 8px 10px;
-		width: 46%;
-		margin: 2%;
-		text-align: center;
-		background-color:white ;
-		color: black;
-		border-radius: 2px;
-		transition: background-color 0.2s ease;
-		text-decoration:none;
-}
 
 header > nav > div > div > a:hover {
-		background-color: #434343;
-		color:white;
+		background-color:white;
+		color:black;
 		cursor: pointer;
+		-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+	user-select: none;
 
 }
 
@@ -161,12 +156,12 @@ p {
 				width: 46%;
 				margin: 2%;
 				text-align: center;
-				background-color:white ;
-				color: black;
+				
+				color: white;
 				border-radius: 2px;
 				transition: background-color 0.2s ease;
 				text-decoration:none;
-					
+
 		}
 
 }
@@ -183,7 +178,7 @@ p {
 		header > nav > div > div > a {
 				display: block;
 
-				padding: 8px 10px;	
+				padding: 8px 10px;
 				width: 95%;
 				margin: auto;
 				text-align: center;
@@ -224,7 +219,7 @@ p {
 		header > nav > div > div > a {
 				display: block;
 
-				padding: 8px 10px;	
+				padding: 8px 10px;
 				width: 95%;
 				margin: auto;
 				text-align: center;

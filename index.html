@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>WhereAreYou</title>
-    
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+<html>
+<head>
+	<title>Dicon-Web</title>
+	<meta charset="utf-8">
 
+	<link rel="stylesheet" href="login/style.css">
+     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
 
-    
-        <script src="js/prefixfree.min.js"></script>
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    
-  </head>
+	<div id="loginBox">
+		
+		<div id="loginText">
+			<h1>WhereAreU</h1>
+		</div>
 
-  <body>
+		<div class="loginContent">
 
-    <div class="login">
-	<h1>Login</h1>
-    	<input type="text" name="u" id="id" placeholder="Username" required="required" />
-        <input type="password" name="p" id="password" placeholder="Password" required="required" />
-        <button type="button" id="log" class="btn btn-primary btn-block btn-large">Access</button>  
+			<input type="textbox" id="id" placeholder="  ID">
+			<input type="textbox" id="password" placeholder="  Password">
+		
+			<input type="button" id="login" value="Login">
+
+			<a href="signup.html">Sign Up</a>
+
+		</div>
+
 	</div>
-    
-        <script src="js/index.js"></script>
 
-    	<script type="text/javascript">
+	<script type="text/javascript">
     		$(function(){
-		  		$("#log").click(function login(){
-
+		  		$("#login").click(function login(){
 		  			id = $("#id").val();
 		  			pass = $("#password").val();
-
 		  			login_url = "http://hansung.info:3000/login";
 		  			
 		  			$.ajax({
@@ -39,18 +40,16 @@
 		  				url : login_url,
 		  				datatype : "json",
 		  				data : {"id":id ,"pw":pass },
-
 		  				success:function(data){
 		  					window.location.href="group.html?"+id;
 		  				},
 		  				error:function(){
-		  					alert("CanNotLoad-FriendList");
+		  					alert("Error-Login-Fail");
 		  				}
 		  			});
 		  		});
 		  	});
-		   </script>
-    
-  
-  </body>
+	</script>
+
+</body>
 </html>
