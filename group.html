@@ -2,7 +2,6 @@
 <head>
   <title>WhereAreU</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="profile/profile.css" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/group.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" charset="utf-8"></script>
@@ -26,31 +25,7 @@
             </div>
         </div>
 
-        <div id="profile_float_left">
-            <a><span><script type="text/javascript">document.write(id);</script></span></a>
-            <div>
-                <div class="portfoliocard">
-                  <div class="coverphoto"></div>
-                  <div class="profile_picture"></div>
-                  <div class="left_col">
-                    <div class="friend">
-                      <div id="fr_num" class="friend_count"></div>
-                      Friends
-                    </div>
-                  </div>
-                  <div class="right_col">
-                    <script type="text/javascript">document.write("<h2 class=\"name\">"+name+"</h2>");</script>
-                    <h3 class="location">WhereAreU</h3>
-                    <div id="profile_list">
-                      <ul class="contact_information">
-                        <div id="set-friend-list">
-                        </div>
-                      </ul>
-                    </div>
-                  </div>
-                  </div>
-            </div>
-        </div>
+        
       
     </nav>
 </header>
@@ -86,15 +61,7 @@
               data : {"id":id},
 
               success:function(data){
-                friendList = data.Friend;
-                console.log(friendList[0]);
-                for(var i = 0; i<friendList.length; i++){
-                  make_list += "<li class=\"mail\">"
-                  make_list += friendList[i]
-                  make_list += "</li>"
-                }
-                $("#set-friend-list").html(make_list)
-                $("#fr_num").html(friendList.length)
+                alert("hell world")
               },
               error:function(){
                 alert("error");
@@ -102,6 +69,5 @@
             });  
         });
     </script>
-  <script type="text/javascript" src="js/profile.js"></script>
 </body>
 </html> 

@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width">
 	 <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
    <link rel="stylesheet" href="css/group.css">
-   <link rel="stylesheet" type="text/css" href="profile/profile.css">
 
    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -35,39 +34,15 @@
 <header>
 		<nav>
 				<div>
-						<a><span>Setting</span></a>
-						<div id="logout" style= "z-index:1;">
+                <a><span>Setting</span></a>
+                <div id="logout" style= "z-index:1;">
                 <a href="#">Map</a>
                 <a href="#">Chat</a>
 								<a href="index.html">LogOut</a>
 						</div>
 				</div>
 
-         <div id="profile_float_left">
-            <a><span><script type="text/javascript">document.write(id);</script></span></a>
-            <div>
-                <div class="portfoliocard">
-                  <div class="coverphoto"></div>
-                  <div class="profile_picture"></div>
-                  <div class="left_col">
-                    <div class="friend">
-                      <div id="fr_num" class="friend_count"></div>
-                      Friends
-                    </div>
-                  </div>
-                  <div class="right_col">
-                    <script type="text/javascript">document.write("<h2 class=\"name\">"+name+"</h2>");</script>
-                    <h3 class="location">WhereAreU</h3>
-                    <div id="profile_list">
-                      <ul class="contact_information">
-                        <div id="set-friend-list">
-                        </div>
-                      </ul>
-                    </div>
-                  </div>
-                  </div>
-            </div>
-        </div>
+
 		</nav>
 </header>
 
@@ -93,35 +68,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" charset="utf-8"></script>
 <script src="js/chat.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/profile.js"></script>
-<script type="text/javascript">
-      $(function(){
 
-            get_url = "http://hansung.info:3000/getfriendlist"
-            var make_list = null;
-            set_friend = document.getElementById('set-friend-list');
-            $.ajax({
-              method: "POST",
-              url : get_url,
-              datatype : "json",
-              data : {"id":id},
 
-              success:function(data){
-                friendList = data.Friend;
-                console.log(friendList[0]);
-                for(var i = 0; i<friendList.length; i++){
-                  make_list += "<li class=\"mail\">"
-                  make_list += friendList[i]
-                  make_list += "</li>"
-                }
-                $("#set-friend-list").html(make_list)
-                $("#fr_num").html(friendList.length)
-              },
-              error:function(){
-                alert("error");
-              }
-            });
-        });
-    </script>
 </body>
 </html>
