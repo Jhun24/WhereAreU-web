@@ -4,21 +4,46 @@ $(function(){
     var i = 0;
     
     $("#leftBtn").mouseover(function(){
-       $(this).css("opacity","0.5");
+        
         $(this).css("transform","scale(1.2)");
         
     });
     
-    $("#rightBtn").click(function leftClick(){
+    $("#rightBtn").mouseover(function(){
+       $(this).css("transform","scale(1.2)"); 
+    });
     
-      
+    $("#leftBtn").mouseout(function(){
+       $(this).css("transform","scale(1)"); 
+    });
     
-    $("#iframe_box").attr('src',arr[i]);
+    $("#rightBtn").mouseout(function(){
+        $(this).css("transform","scale(1)");
+    });
     
-      i = i+1;
+    $("#rightBtn").click(function rightClick(){
       if(i > 4){
           i = 0;
       }
+    
+    $("#iframe_box").attr('src',arr[i]);    
+    
+      i = i+1;
+
+      
+        
+        
+    });
+    
+    $("#leftBtn").click(function leftClick(){
+    
+        if(i < 0){
+          i = 4;
+      }
+      
+    $("#iframe_box").attr('src',arr[i]);
+    
+      i = i-1;
       
         
         
