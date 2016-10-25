@@ -28,8 +28,13 @@ h1{
 	margin:auto;
 
 }
+
+h1{
+    display:inline;
+}
+
 #loginText{
-	padding-top:8%;
+	padding:20%;
 	height:30%;
 	font-size:22px;
 }
@@ -56,6 +61,11 @@ h1{
 	border:3px solid #434343;
 	text-decoration:none;
 	opacity:0.8;
+    font-size:20px;
+}
+
+#are{
+    color:#31B0F7;
 }
 
 #id{
@@ -77,8 +87,8 @@ h1{
 	background-color:#31B7F0;
 	border:none;
 	outline:none;
-	
-
+    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
 	margin-bottom:7%;
 }
 
